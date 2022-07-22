@@ -355,6 +355,7 @@ class _StyledTextState extends State<StyledText> {
   @override
   Widget build(BuildContext context) {
     if (_textSpans == null) return const SizedBox();
+
     _semanticsLabel = widget.semanticsLabel;
 
     final DefaultTextStyle defaultTextStyle = DefaultTextStyle.of(context);
@@ -370,7 +371,7 @@ class _StyledTextState extends State<StyledText> {
       children: [
         _textSpans!,
       ],
-      semanticsLabel: _semanticsLabel,
+      semanticsLabel: _semanticsLabel!,
     );
 
     if (!widget.selectable) {
