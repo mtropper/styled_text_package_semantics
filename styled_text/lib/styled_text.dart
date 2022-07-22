@@ -344,7 +344,10 @@ class _StyledTextState extends State<StyledText> {
     if (node != null) {
       if (mounted) {
         final span = node.createSpan(context: context);
-        _textSpans = TextSpan(children: [span]);
+        _textSpans = TextSpan(
+          children: [span],
+          semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "hello",
+        );
         setState(() {});
       } else {
         _textSpans = null;
@@ -374,7 +377,6 @@ class _StyledTextState extends State<StyledText> {
       children: [
         _textSpans!,
       ],
-      semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "hello",
     );
 
     if (!widget.selectable) {
