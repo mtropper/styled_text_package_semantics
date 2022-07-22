@@ -111,6 +111,7 @@ class StyledText extends StatefulWidget {
   ///
   /// See [RenderParagraph.locale] for more information.
   final Locale? locale;
+  final String? semanticsLabel;
 
   /// {@macro flutter.painting.textPainter.strutStyle}
   final StrutStyle? strutStyle;
@@ -136,6 +137,7 @@ class StyledText extends StatefulWidget {
     this.textScaleFactor,
     this.maxLines,
     this.locale,
+    this.semanticsLabel,
     this.strutStyle,
     this.textWidthBasis,
     this.textHeightBehavior,
@@ -378,6 +380,7 @@ class _StyledTextState extends State<StyledText> {
             widget.textScaleFactor ?? MediaQuery.textScaleFactorOf(context),
         maxLines: widget.maxLines ?? defaultTextStyle.maxLines,
         locale: widget.locale,
+        semanticsLabel: widget.semanticsLabel,
         strutStyle: widget.strutStyle,
         textWidthBasis:
             widget.textWidthBasis ?? defaultTextStyle.textWidthBasis,
