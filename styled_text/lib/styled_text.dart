@@ -190,6 +190,7 @@ class StyledText extends StatefulWidget {
         this.softWrap = true,
         this.overflow = TextOverflow.clip,
         this.locale = null,
+        this.semanticsLabel = "",
         this._focusNode = focusNode,
         this._showCursor = showCursor,
         this._autofocus = autofocus,
@@ -229,6 +230,7 @@ class _StyledTextState extends State<StyledText> {
   String? _text;
   TextSpan? _textSpans;
   _Node? _rootNode;
+  String? _semanticsLabel;
 
   @override
   void didChangeDependencies() {
@@ -353,6 +355,7 @@ class _StyledTextState extends State<StyledText> {
   @override
   Widget build(BuildContext context) {
     if (_textSpans == null) return const SizedBox();
+    _semanticsLabel = widget.semanticsLabel;
 
     final DefaultTextStyle defaultTextStyle = DefaultTextStyle.of(context);
     TextStyle? effectiveTextStyle = widget.style;
@@ -364,7 +367,10 @@ class _StyledTextState extends State<StyledText> {
 
     final span = TextSpan(
       style: effectiveTextStyle,
-      children: [_textSpans!],
+      children: [
+        _textSpans!,
+      ],
+      semanticsLabel: _semanticsLabel,
     );
 
     if (!widget.selectable) {
