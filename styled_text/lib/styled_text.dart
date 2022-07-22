@@ -357,6 +357,7 @@ class _StyledTextState extends State<StyledText> {
     if (_textSpans == null) return const SizedBox();
 
     _semanticsLabel = widget.semanticsLabel;
+    print(_semanticsLabel);
 
     final DefaultTextStyle defaultTextStyle = DefaultTextStyle.of(context);
     TextStyle? effectiveTextStyle = widget.style;
