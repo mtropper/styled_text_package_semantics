@@ -374,7 +374,7 @@ class _StyledTextState extends State<StyledText> {
       children: [
         _textSpans!,
       ],
-      semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "",
+      semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "hello",
     );
 
     if (!widget.selectable) {
