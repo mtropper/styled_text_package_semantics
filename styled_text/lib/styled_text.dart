@@ -34,6 +34,8 @@ export 'tags/styled_text_tag_custom.dart';
 ///
 /// * [TextStyle], which discusses how to style text.
 ///
+String? _semanticsLabel;
+
 class StyledText extends StatefulWidget {
   /// The text to display in this widget. The text must be valid xml.
   ///
@@ -230,7 +232,6 @@ class _StyledTextState extends State<StyledText> {
   String? _text;
   TextSpan? _textSpans;
   _Node? _rootNode;
-  String? _semanticsLabel;
 
   @override
   void didChangeDependencies() {
@@ -374,7 +375,6 @@ class _StyledTextState extends State<StyledText> {
       children: [
         _textSpans!,
       ],
-      semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "hello",
     );
     final span2 = TextSpan(
       style: effectiveTextStyle,
@@ -544,6 +544,7 @@ class _TextNode extends _Node {
       text: text,
       children: createChildren(context: context, recognizer: recognizer),
       recognizer: recognizer,
+      semanticsLabel: _semanticsLabel,
     );
   }
 }
