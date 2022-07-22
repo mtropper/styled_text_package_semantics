@@ -359,6 +359,7 @@ class _StyledTextState extends State<StyledText> {
     _semanticsLabel = widget.semanticsLabel;
     print("_semanticsLabel");
     print(_semanticsLabel);
+    print(_textSpans);
 
     final DefaultTextStyle defaultTextStyle = DefaultTextStyle.of(context);
     TextStyle? effectiveTextStyle = widget.style;
@@ -373,7 +374,7 @@ class _StyledTextState extends State<StyledText> {
       children: [
         _textSpans!,
       ],
-      semanticsLabel: _semanticsLabel!,
+      semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "",
     );
 
     if (!widget.selectable) {
