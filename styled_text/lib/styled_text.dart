@@ -386,7 +386,6 @@ class _StyledTextState extends State<StyledText> {
             widget.textScaleFactor ?? MediaQuery.textScaleFactorOf(context),
         maxLines: widget.maxLines ?? defaultTextStyle.maxLines,
         locale: widget.locale,
-        semanticsLabel: widget.semanticsLabel,
         strutStyle: widget.strutStyle,
         textWidthBasis:
             widget.textWidthBasis ?? defaultTextStyle.textWidthBasis,
