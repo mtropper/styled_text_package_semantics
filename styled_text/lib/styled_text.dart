@@ -344,10 +344,7 @@ class _StyledTextState extends State<StyledText> {
     if (node != null) {
       if (mounted) {
         final span = node.createSpan(context: context);
-        _textSpans = TextSpan(
-          children: [span],
-          semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "hello",
-        );
+        _textSpans = TextSpan(children: [span]);
         setState(() {});
       } else {
         _textSpans = null;
@@ -377,8 +374,14 @@ class _StyledTextState extends State<StyledText> {
       children: [
         _textSpans!,
       ],
+      semanticsLabel: (_semanticsLabel != null) ? _semanticsLabel : "hello",
     );
-
+    final span2 = TextSpan(
+      style: effectiveTextStyle,
+      children: [
+        _textSpans!,
+      ],
+    );
     if (!widget.selectable) {
       return RichText(
         textAlign:
@@ -402,7 +405,7 @@ class _StyledTextState extends State<StyledText> {
       );
     } else {
       return SelectableText.rich(
-        span,
+        span2,
         focusNode: widget._focusNode,
         showCursor: widget._showCursor,
         autofocus: widget._autofocus,
