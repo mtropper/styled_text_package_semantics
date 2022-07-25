@@ -377,6 +377,7 @@ class _StyledTextState extends State<StyledText> {
       ],
     );
     final span2 = TextSpan(
+      text: "",
       style: effectiveTextStyle,
       children: [
         _textSpans!,
