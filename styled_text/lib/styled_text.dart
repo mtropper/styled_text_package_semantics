@@ -370,6 +370,7 @@ class _StyledTextState extends State<StyledText> {
           .merge(const TextStyle(fontWeight: FontWeight.bold));
 
     final span = TextSpan(
+      text: "",
       style: effectiveTextStyle,
       semanticsLabel: _semanticsLabel,
       children: [
@@ -377,7 +378,6 @@ class _StyledTextState extends State<StyledText> {
       ],
     );
     final span2 = TextSpan(
-      text: "",
       style: effectiveTextStyle,
       children: [
         _textSpans!,
