@@ -113,7 +113,7 @@ class StyledText extends StatefulWidget {
   ///
   /// See [RenderParagraph.locale] for more information.
   final Locale? locale;
-  final String? semanticsLabel;
+  String? semanticsLabel;
 
   /// {@macro flutter.painting.textPainter.strutStyle}
   final StrutStyle? strutStyle;
@@ -192,7 +192,6 @@ class StyledText extends StatefulWidget {
         this.softWrap = true,
         this.overflow = TextOverflow.clip,
         this.locale = null,
-        this.semanticsLabel = "",
         this._focusNode = focusNode,
         this._showCursor = showCursor,
         this._autofocus = autofocus,
@@ -372,6 +371,7 @@ class _StyledTextState extends State<StyledText> {
 
     final span = TextSpan(
       style: effectiveTextStyle,
+      semanticsLabel: _semanticsLabel,
       children: [
         _textSpans!,
       ],
